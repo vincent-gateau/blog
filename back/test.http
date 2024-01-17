@@ -1,0 +1,29 @@
+GET http://localhost:3050/article
+
+###
+
+GET http://localhost:3050/article/:id
+
+// joi ,sanatizer
+###
+
+POST http://localhost:3050/commentaires/create
+
+###
+GET http://localhost:3050/category
+
+###
+POST  http://localhost:3050/article/create
+
+### REGISTER USER
+POST  http://localhost:3050/register
+content-type: application/json
+
+{
+    "username":"test",
+    "mail":"test",
+    "password":"test"
+}
+
+###
+
