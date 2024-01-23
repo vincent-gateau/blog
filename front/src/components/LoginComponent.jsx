@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 const LoginComponent = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
       // Envoie la requête POST au serveur pour la connexion
-      const response = await fetch('http://localhost:3050/login', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3050/login", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password }),
       });
@@ -22,35 +22,35 @@ const LoginComponent = () => {
         const data = await response.json();
 
         // Réinitialise les champs de formulaire
-        setUsername('');
-        setPassword('');
-
-        
+        setUsername("");
+        setPassword("");
 
         // Stocke le token JWT et le nom d'utilisateur en local storage
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('username', data.username);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("username", data.username);
 
         // Affiche les données renvoyées par le serveur en cas de succès
-        console.log('Données renvoyées par le serveur après connexion réussie :', data);
+        console.log(
+          "Données renvoyées par le serveur après connexion réussie :",
+          data
+        );
 
         // Redirige l'utilisateur vers la page "articles"
-        navigate('/articles');
-  
+        navigate("/articles");
       } else {
         // Gère les erreurs de connexion
-        console.error('Erreur lors de la connexion');
+        console.error("Erreur lors de la connexion");
       }
     } catch (error) {
       // Gère les erreurs inattendues
-      console.error('Erreur lors de la connexion', error);
+      console.error("Erreur lors de la connexion", error);
     }
   };
 
   return (
-    <div className="card w-full max-w-md bg-base-100">
+    <div className="card w-full max-w-md bg-zinc-800">
       <div className="card-body">
-        <h2 className="text-2xl font-bold mb-4">Connexion</h2>
+        <h2 className="text-2xl font-bold mb-4 text-purple-600">Connexion</h2>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Pseudo</span>
@@ -76,9 +76,15 @@ const LoginComponent = () => {
           />
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary" onClick={handleLogin}>
+          <button
+            className="bg-purple-500 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded"
+            onClick={handleLogin}
+          >
             Connexion
           </button>
+          <Link to="/createaccount" className=" text-white">
+            devenir membre
+          </Link>
         </div>
       </div>
     </div>
@@ -86,4 +92,3 @@ const LoginComponent = () => {
 };
 
 export default LoginComponent;
-

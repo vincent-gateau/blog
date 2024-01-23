@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const CreateAccountForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [mail, setmail] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [mail, setmail] = useState("");
 
   const handleCreateAccount = async () => {
     if (!username || !password || !mail) {
-      console.error('Tous les champs sont obligatoires');
+      console.error("Tous les champs sont obligatoires");
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:3050/register', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3050/register", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, password, mail }),
       });
@@ -23,22 +23,24 @@ const CreateAccountForm = () => {
       console.log("user retourné", userDatas);
       if (response.ok) {
         setUsername(userDatas.username);
-        setPassword('');
-        setmail('');
-        localStorage.setItem('username',userDatas,username);// stocker le username en localStorage et le token JWT (quand il sera dispo ;p)
-        console.log('Compte créé avec succès');
+        setPassword("");
+        setmail("");
+        localStorage.setItem("username", userDatas, username); // stocker le username en localStorage et le token JWT (quand il sera dispo ;p)
+        console.log("Compte créé avec succès");
       } else {
-        console.error('Erreur lors de la création du compte');
+        console.error("Erreur lors de la création du compte");
       }
     } catch (error) {
-      console.error('Erreur lors de la création du compte', error);
+      console.error("Erreur lors de la création du compte", error);
     }
   };
 
   return (
-    <div className="card w-full max-w-md bg-base-100">
-      <div className="card-body">
-        <h2 className="text-2xl font-bold mb-4">Créer un compte</h2>
+    <div className="card flex min-h-screen items-center justify-center bg-gray-200">
+      <div className="card-body max-h-[500px] w-96 bg-zinc-800 rounded-xl">
+        <h2 className="text-2xl font-bold text-purple-600 mb-4">
+          Créer un compte
+        </h2>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Pseudo</span>

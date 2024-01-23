@@ -17,10 +17,19 @@ const Header = () => {
 
   return (
     <header>
-      <div className="navbar bg-neutral-950  border-b border-gray-300 grid grid-cols-3">
+      <div className="navbar bg-zinc-800 text-white  border-b border-gray-300 grid grid-cols-3">
         <div className="flex-1 text-left pl-5">
           <Link to="/" className="btn btn-ghost normal-case text-xl">
             The Blog
+          </Link>
+        </div>
+
+        <div className="flex-1 text-right pr-5">
+          <Link
+            to="/articles"
+            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+          >
+            All Post
           </Link>
         </div>
         <div className="flex-1 text-center">
@@ -31,11 +40,6 @@ const Header = () => {
               Connexion
             </Link>
           )}
-        </div>
-        <div className="flex-1 text-right pr-5">
-          <Link to="/articles" className="btn btn-ghost normal-case">
-            All Post
-          </Link>
         </div>
       </div>
     </header>

@@ -1,15 +1,15 @@
-import React from 'react';
-import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import Modal from 'react-modal'; 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import ArticleList from './pages/ArticleList';
-import Admin from './pages/Admin'
-import Header from './components/Header';
-import Footer from './components/Footer';
-import FoundersSection from './components/FoundersSection';
+import React from "react";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import Modal from "react-modal";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import ArticleList from "./pages/ArticleList";
+import Admin from "./pages/Admin";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import CreateAccountForm from "./components/CreateAccountForm";
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 function App() {
   const navigate = useNavigate();
@@ -24,11 +24,15 @@ function App() {
       <Header onLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login onLogin={() => navigate('/articles')} />} />
+        <Route
+          path="login"
+          element={<Login onLogin={() => navigate("/articles")} />}
+        />
         <Route path="articles" element={<ArticleList />} />
-        <Route path='admin' element={<Admin />} />
+        <Route path="admin" element={<Admin />} />
+        <Route path="createaccount" element={<CreateAccountForm />} />
       </Routes>
-      <FoundersSection />
+
       <Footer />
     </div>
   );
