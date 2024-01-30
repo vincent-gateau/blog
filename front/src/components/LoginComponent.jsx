@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import background from "../background.png";
 
 const LoginComponent = () => {
   const navigate = useNavigate();
@@ -48,43 +49,46 @@ const LoginComponent = () => {
   };
 
   return (
-    <div className="card w-full max-w-md bg-zinc-800">
-      <div className="card-body">
-        <h2 className="text-2xl font-bold mb-4 text-purple-600">Connexion</h2>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Pseudo</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Pseudo"
-            className="input input-bordered"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="form-control mt-4">
-          <label className="label">
-            <span className="label-text">Mot de passe</span>
-          </label>
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            className="input input-bordered"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="form-control mt-6">
-          <button
-            className="bg-purple-500 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded"
-            onClick={handleLogin}
-          >
-            Connexion
-          </button>
-          <Link to="/createaccount" className=" text-white">
-            devenir membre
-          </Link>
+    <div className="hero min-h-[900px] bg-gray-200">
+      <img src={background} className="w-full " />
+      <div className="card w-full max-w-md bg-zinc-800 ">
+        <div className="card-body ">
+          <h2 className="text-2xl font-bold mb-4 text-purple-600">Connexion</h2>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Pseudo</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Pseudo"
+              className="input input-bordered"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="form-control mt-4">
+            <label className="label">
+              <span className="label-text">Mot de passe</span>
+            </label>
+            <input
+              type="password"
+              placeholder="Mot de passe"
+              className="input input-bordered"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="form-control mt-6">
+            <button
+              className="bg-purple-500 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded"
+              onClick={handleLogin}
+            >
+              Connexion
+            </button>
+            <Link to="/createaccount" className=" text-white">
+              devenir membre
+            </Link>
+          </div>
         </div>
       </div>
     </div>

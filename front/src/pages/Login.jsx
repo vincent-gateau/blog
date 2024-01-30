@@ -1,10 +1,11 @@
 import React from "react";
 import LoginComponent from "../components/LoginComponent";
 import CreateAccountForm from "../components/CreateAccountForm";
+import background from "../background.png";
 
 const Login = () => {
   return (
-    <div className="flex min-h-screen bg-gray-200 items-center justify-center">
+    <div>
       <LoginComponent />
     </div>
   );
