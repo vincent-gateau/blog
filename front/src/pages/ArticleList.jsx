@@ -4,13 +4,10 @@ import PostArticle from "../components/PostArticle";
 
 const ArticleList = () => {
   return (
-    <div className="min-h-screen bg-base-200 p-8">
-      <div className="container mx-auto">
-        <PostArticle />
-        <div className=" lg:grid-cols-1">
-          <Article />
-        </div>
-      </div>
+    <div className="min-h-screen p-2 bg-gray-200">
+      <PostArticle />
+
+      <Article />
     </div>
   );
 };

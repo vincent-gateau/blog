@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 // Importez useHistory
 import UserStatus from "./UserStatus";
-import logo from "../logo.png";
+import logoo from "../logoo.jpg";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Header = () => {
       <div className="navbar bg-zinc-800 text-white  border-b border-gray-300 grid grid-cols-3">
         <div className="flex-1 text-left pl-5">
           <Link to="/" className="btn btn-ghost normal-case text-xl">
-            <img src={logo} className="w-12" />
+            <img src={logoo} className="w-12" />
           </Link>
         </div>
 
