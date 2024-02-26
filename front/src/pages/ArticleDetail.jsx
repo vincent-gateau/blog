@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Article from "../components/Article";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const ArticleDetail = () => {
   const { articleId } = useParams();
@@ -10,8 +12,7 @@ const ArticleDetail = () => {
 
   return (
     <div>
-      <Header />
-      <Footer />
+      <Article />
     </div>
   );
 };

@@ -3,7 +3,12 @@ GET http://localhost:3050/article
 ###
 
 GET http://localhost:3050/article/:id
+content-type: application/json
 
+{
+    "id": 1,
+    
+}
 // joi ,sanatizer
 ###
 

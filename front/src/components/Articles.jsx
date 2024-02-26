@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Comment from "./Comment";
 import LikeButton from "./LikeButton";
 
@@ -94,6 +95,9 @@ const Articles = () => {
                 <div className="flex justify-end">
                   <LikeButton />
                 </div>
+                <Link to="/Article" className="btn btn-primary">
+                  voir l'article
+                </Link>
               </div>
             </div>
           </div>

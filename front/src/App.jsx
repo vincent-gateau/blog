@@ -8,6 +8,7 @@ import Admin from "./pages/Admin";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CreateAccountForm from "./components/CreateAccountForm";
+import ArticleDetail from "./pages/ArticleDetail";
 
 Modal.setAppElement("#root");
 
@@ -29,6 +30,7 @@ function App() {
           element={<Login onLogin={() => navigate("/articles")} />}
         />
         <Route path="articles" element={<ArticleList />} />
+        <Route path="article" element={<ArticleDetail />} />
         <Route path="admin" element={<Admin />} />
         <Route path="createaccount" element={<CreateAccountForm />} />
       </Routes>
